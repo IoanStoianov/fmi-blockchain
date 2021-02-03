@@ -100,21 +100,26 @@ contract StipendCenter {
         }
     }
 
+    event NewCandidate();
+
     function addNewCandidate(string memory name, string memory faculcyNumber, uint grade, address payable studentAddress) external payable inClastaionState{
         require(studentAddress == msg.sender, "StudentAddress and sender must be the same address");
         require(msg.value == stake, "The send value is different than the required!");
         DataTypes.Candidate memory newCandidate = DataTypes.Candidate(name, faculcyNumber, grade, studentAddress, true);
         candidates.push(newCandidate);
+        emit NewCandidate();
     }
 
     function getCandidatesNum() public view returns (uint) {
         return candidates.length;
     }
     
+    event NewDispute();
     function opendDispute(uint id, address payable openBy) external inDesputeState{
         require(openBy == msg.sender, "OpenBy and sender must be the same address");
         DataTypes.Dispute memory newDispute = DataTypes.Dispute(id, openBy, true);
         disputes.push(newDispute);
+        emit NewDispute();
     }
     
     function getDisputeNum() public view returns (uint) {

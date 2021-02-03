@@ -1,18 +1,18 @@
 {
   "contractName": "DataTypes",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol\":\"DataTypes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol\":{\"keccak256\":\"0x05f389a9a61c385f4675be0a0115d31c6a5d63e41aee14f38c871f0d508bbe99\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9a24e125930ee50656e1373c1db53b8371bc331ebed8170bb620b1ca4e993910\",\"dweb:/ipfs/QmUDkhws5znt2NZnqD5aRg8CEh3rPo1oKpM2QdmVaXf3bU\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206de31d5062685cf44ab9aaf30d156504aa3ccdea49defe2f87b460e89453007164736f6c63430007040033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206de31d5062685cf44ab9aaf30d156504aa3ccdea49defe2f87b460e89453007164736f6c63430007040033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":\"DataTypes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x05f389a9a61c385f4675be0a0115d31c6a5d63e41aee14f38c871f0d508bbe99\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9a24e125930ee50656e1373c1db53b8371bc331ebed8170bb620b1ca4e993910\",\"dweb:/ipfs/QmUDkhws5znt2NZnqD5aRg8CEh3rPo1oKpM2QdmVaXf3bU\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220301a9dbee07b98f13af99b59a1eaebf1721072ee1a2451991da7796bd348204964736f6c63430007040033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220301a9dbee07b98f13af99b59a1eaebf1721072ee1a2451991da7796bd348204964736f6c63430007040033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
   "sourceMap": "69:280:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "69:280:0:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.7.4 <0.9.0;\n\nlibrary DataTypes {\n    struct Candidate {\n        string Name;\n        string FaculcyNumber;\n        uint Grade;\n        address payable Address;\n        bool Valid;\n    }\n\n    struct Dispute{\n        uint CandidateId;\n        address payable OpenedBy;\n        bool Open;\n    }\n}",
-  "sourcePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+  "sourcePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
   "ast": {
-    "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+    "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
     "exportedSymbols": {
       "DataTypes": [
         20
@@ -290,7 +290,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+      "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
       "exportedSymbols": {
         "DataTypes": [
           20
@@ -585,7 +585,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T16:17:19.598Z",
+  "updatedAt": "2021-02-03T17:05:57.506Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

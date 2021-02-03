@@ -75,7 +75,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"c\",\"type\":\"tuple[]\"}],\"name\":\"createClasation\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"x\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol\":\"IClasify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol\":{\"keccak256\":\"0x05f389a9a61c385f4675be0a0115d31c6a5d63e41aee14f38c871f0d508bbe99\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9a24e125930ee50656e1373c1db53b8371bc331ebed8170bb620b1ca4e993910\",\"dweb:/ipfs/QmUDkhws5znt2NZnqD5aRg8CEh3rPo1oKpM2QdmVaXf3bU\"]},\"/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol\":{\"keccak256\":\"0xf4c3d708af2e6ce65a55d1c19caeb8cc7e02fa80d7ec4dea42ca11a9a4bca237\",\"urls\":[\"bzz-raw://9799bfe2a249e56002ab8c5f0faf6e81c4f11eda73d2e7c93bacf250d7b329b0\",\"dweb:/ipfs/QmcqjjjqHZrBqEkW2Zrznr2KuJNdnvNpu8kXJs7K8vzoKP\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"c\",\"type\":\"tuple[]\"}],\"name\":\"createClasation\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"x\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol\":\"IClasify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x05f389a9a61c385f4675be0a0115d31c6a5d63e41aee14f38c871f0d508bbe99\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9a24e125930ee50656e1373c1db53b8371bc331ebed8170bb620b1ca4e993910\",\"dweb:/ipfs/QmUDkhws5znt2NZnqD5aRg8CEh3rPo1oKpM2QdmVaXf3bU\"]},\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol\":{\"keccak256\":\"0xf4c3d708af2e6ce65a55d1c19caeb8cc7e02fa80d7ec4dea42ca11a9a4bca237\",\"urls\":[\"bzz-raw://9799bfe2a249e56002ab8c5f0faf6e81c4f11eda73d2e7c93bacf250d7b329b0\",\"dweb:/ipfs/QmcqjjjqHZrBqEkW2Zrznr2KuJNdnvNpu8kXJs7K8vzoKP\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -84,9 +84,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.7.4 <0.9.0;\npragma experimental ABIEncoderV2;\n\nimport \"./DataTypes.sol\";\n\ninterface IClasify{\n    function createClasation(DataTypes.Candidate[] memory c) external returns(DataTypes.Candidate[] memory x);\n}",
-  "sourcePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+  "sourcePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
   "ast": {
-    "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+    "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
     "exportedSymbols": {
       "DataTypes": [
         20
@@ -122,7 +122,7 @@
         "src": "32:33:1"
       },
       {
-        "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+        "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
         "file": "./DataTypes.sol",
         "id": 24,
         "nodeType": "ImportDirective",
@@ -254,7 +254,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+      "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
       "exportedSymbols": {
         "DataTypes": [
           20
@@ -295,7 +295,7 @@
       {
         "attributes": {
           "SourceUnit": 21,
-          "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+          "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
           "file": "./DataTypes.sol",
           "scope": 35,
           "symbolAliases": [
@@ -450,7 +450,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T16:17:19.605Z",
+  "updatedAt": "2021-02-03T17:05:57.507Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

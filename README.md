@@ -17,3 +17,5 @@ Setup
 5. Import in Metamsk your account from truffle develop copy the private key of the first account and paste it in Metamask
 
 6. Play around
+
+If you have unexpected transaction problems and see in the console `nonce` go to Metamask click on the circle Icon>Setting>Advanced>Reset Account
