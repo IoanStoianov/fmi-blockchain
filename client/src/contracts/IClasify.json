@@ -1,0 +1,464 @@
+{
+  "contractName": "IClasify",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "Name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "FaculcyNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Grade",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address payable",
+              "name": "Address",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "Valid",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct DataTypes.Candidate[]",
+          "name": "c",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "createClasation",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "Name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "FaculcyNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Grade",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address payable",
+              "name": "Address",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "Valid",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct DataTypes.Candidate[]",
+          "name": "x",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"c\",\"type\":\"tuple[]\"}],\"name\":\"createClasation\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FaculcyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"x\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol\":\"IClasify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol\":{\"keccak256\":\"0x05f389a9a61c385f4675be0a0115d31c6a5d63e41aee14f38c871f0d508bbe99\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9a24e125930ee50656e1373c1db53b8371bc331ebed8170bb620b1ca4e993910\",\"dweb:/ipfs/QmUDkhws5znt2NZnqD5aRg8CEh3rPo1oKpM2QdmVaXf3bU\"]},\"/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol\":{\"keccak256\":\"0xf4c3d708af2e6ce65a55d1c19caeb8cc7e02fa80d7ec4dea42ca11a9a4bca237\",\"urls\":[\"bzz-raw://9799bfe2a249e56002ab8c5f0faf6e81c4f11eda73d2e7c93bacf250d7b329b0\",\"dweb:/ipfs/QmcqjjjqHZrBqEkW2Zrznr2KuJNdnvNpu8kXJs7K8vzoKP\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.7.4 <0.9.0;\npragma experimental ABIEncoderV2;\n\nimport \"./DataTypes.sol\";\n\ninterface IClasify{\n    function createClasation(DataTypes.Candidate[] memory c) external returns(DataTypes.Candidate[] memory x);\n}",
+  "sourcePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+  "ast": {
+    "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+    "exportedSymbols": {
+      "DataTypes": [
+        20
+      ],
+      "IClasify": [
+        34
+      ]
+    },
+    "id": 35,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".4",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "id": 23,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:33:1"
+      },
+      {
+        "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+        "file": "./DataTypes.sol",
+        "id": 24,
+        "nodeType": "ImportDirective",
+        "scope": 35,
+        "sourceUnit": 21,
+        "src": "67:25:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 34,
+        "linearizedBaseContracts": [
+          34
+        ],
+        "name": "IClasify",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "bde5ce9e",
+            "id": 33,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createClasation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 28,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27,
+                  "mutability": "mutable",
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "143:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Candidate_$12_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct DataTypes.Candidate[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 25,
+                      "name": "DataTypes.Candidate",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 12,
+                      "src": "143:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Candidate_$12_storage_ptr",
+                        "typeString": "struct DataTypes.Candidate"
+                      }
+                    },
+                    "id": 26,
+                    "nodeType": "ArrayTypeName",
+                    "src": "143:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Candidate_$12_storage_$dyn_storage_ptr",
+                      "typeString": "struct DataTypes.Candidate[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:32:1"
+            },
+            "returnParameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "192:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Candidate_$12_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct DataTypes.Candidate[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 29,
+                      "name": "DataTypes.Candidate",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 12,
+                      "src": "192:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Candidate_$12_storage_ptr",
+                        "typeString": "struct DataTypes.Candidate"
+                      }
+                    },
+                    "id": 30,
+                    "nodeType": "ArrayTypeName",
+                    "src": "192:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Candidate_$12_storage_$dyn_storage_ptr",
+                      "typeString": "struct DataTypes.Candidate[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "191:32:1"
+            },
+            "scope": 34,
+            "src": "118:106:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 35,
+        "src": "94:132:1"
+      }
+    ],
+    "src": "0:226:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/IClasify.sol",
+      "exportedSymbols": {
+        "DataTypes": [
+          20
+        ],
+        "IClasify": [
+          34
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.7",
+            ".4",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 22,
+        "name": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 23,
+        "name": "PragmaDirective",
+        "src": "32:33:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 21,
+          "absolutePath": "/home/ioan681/Desktop/Projects/stipends/contracts/DataTypes.sol",
+          "file": "./DataTypes.sol",
+          "scope": 35,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 24,
+        "name": "ImportDirective",
+        "src": "67:25:1"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            34
+          ],
+          "name": "IClasify",
+          "scope": 35
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "bde5ce9e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createClasation",
+              "scope": 34,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "c",
+                      "scope": 33,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct DataTypes.Candidate[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct DataTypes.Candidate[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "DataTypes.Candidate",
+                              "referencedDeclaration": 12,
+                              "type": "struct DataTypes.Candidate"
+                            },
+                            "id": 25,
+                            "name": "UserDefinedTypeName",
+                            "src": "143:19:1"
+                          }
+                        ],
+                        "id": 26,
+                        "name": "ArrayTypeName",
+                        "src": "143:21:1"
+                      }
+                    ],
+                    "id": 27,
+                    "name": "VariableDeclaration",
+                    "src": "143:30:1"
+                  }
+                ],
+                "id": 28,
+                "name": "ParameterList",
+                "src": "142:32:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "x",
+                      "scope": 33,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct DataTypes.Candidate[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct DataTypes.Candidate[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "DataTypes.Candidate",
+                              "referencedDeclaration": 12,
+                              "type": "struct DataTypes.Candidate"
+                            },
+                            "id": 29,
+                            "name": "UserDefinedTypeName",
+                            "src": "192:19:1"
+                          }
+                        ],
+                        "id": 30,
+                        "name": "ArrayTypeName",
+                        "src": "192:21:1"
+                      }
+                    ],
+                    "id": 31,
+                    "name": "VariableDeclaration",
+                    "src": "192:30:1"
+                  }
+                ],
+                "id": 32,
+                "name": "ParameterList",
+                "src": "191:32:1"
+              }
+            ],
+            "id": 33,
+            "name": "FunctionDefinition",
+            "src": "118:106:1"
+          }
+        ],
+        "id": 34,
+        "name": "ContractDefinition",
+        "src": "94:132:1"
+      }
+    ],
+    "id": 35,
+    "name": "SourceUnit",
+    "src": "0:226:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-02-03T16:17:19.605Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
