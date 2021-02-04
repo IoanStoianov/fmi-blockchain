@@ -1,0 +1,29 @@
+.container {
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+}
+
+.form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+}
+
+.form h2 {
+    margin: 0 0 1em 0;
+}
+
+.inputField + .inputField {
+    margin-top: 1em;
+}
+
+.submitButton {
+    margin-top: 1em !important;
+}
