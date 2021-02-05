@@ -9,9 +9,9 @@ export default function NavBar() {
     return (
         <AppBar position="relative" className="appBar">
         <Toolbar variant="dense" className="toolBar">
-            <Link to="/" component={Button}>Request Scholarship</Link>
-            <Link to="/ranking" component={Button}>Ranking</Link>
-            <Link to="/disputes" component={Button}>Disputes</Link>
+            <Link to="/" component={Button} className={window.location.pathname === '/' ? 'button' : ''}>Request Scholarship</Link>
+            <Link to="/ranking" component={Button} className={window.location.pathname === '/ranking' ? 'button' : ''}>Ranking</Link>
+            <Link to="/disputes" component={Button} className={window.location.pathname === '/disputes' ? 'button' : ''}>Disputes</Link>
         </Toolbar>
       </AppBar>
     );

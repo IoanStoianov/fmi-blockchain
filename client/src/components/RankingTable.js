@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -14,64 +14,48 @@ import Button from '@material-ui/core/Button';
 
 import './rankingTable.css';
 
-function createData(rank, account, grade, wager) {
-    return { rank, account, grade, wager };
-  }
-  
-  const rows = [
-    createData( 1,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDc', 159, 6.0),
-    createData( 2,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDb', 262, 16.0),
-    createData( 3,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDd', 262, 16.0),
-    createData( 4,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDf', 262, 16.0),
-    createData( 5,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDn', 262, 16.0),
-    createData( 6,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDa', 237, 9.0),
-    createData( 7,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDs', 262, 16.0),
-    createData( 8,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDe', 262, 16.0),
-    createData( 9,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDp', 262, 16.0),
-    createData( 10,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDl', 262, 16.0),
-    createData( 11,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDk', 262, 16.0),
-    createData( 12,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDh', 262, 16.0),
-    createData( 13,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDv', 159, 6.0),
-    createData( 14,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDx', 237, 9.0),
-    createData( 15,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDz', 262, 16.0),
-    createData( 16,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDy', 262, 16.0),
-    createData( 17,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDt', 262, 16.0),
-    createData( 18,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDo', 262, 16.0),
-    createData( 19,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDi', 262, 16.0),
-    createData( 20,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDu', 262, 16.0),
-    createData( 21,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD1', 262, 16.0),
-    createData( 22,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD2', 262, 16.0),
-    createData( 23,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD3', 159, 6.0),
-    createData( 24,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD4', 237, 9.0),
-    createData( 25,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD5', 262, 16.0),
-    createData( 26,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD6', 262, 16.0),
-    createData( 27,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD7', 262, 16.0),
-    createData( 28,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD8', 262, 16.0),
-    createData( 29,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BD9', 262, 16.0),
-    createData( 30,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDq', 262, 16.0),
-    createData( 31,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDm', 262, 16.0),
-    createData( 32,'0x617DA121aBf03D4c1AF572F5a4E313E26BeF7BDg', 262, 16.0),
-  ];
-
-export default function RannkingTable() {
+export default function RannkingTable({contract, accounts}) {
 
     const [open, setOpen] = useState(false);
     const [selectedRow, setSelectedRow] = useState({});
+    const [candidates, setCandidates] = useState(null);
+
+    const loadCandidates = async () => {
+        const candidatesNum = await contract.methods.getCandidatesNum().call();
+        let candidates = [];
+        for (let i = 0; i < candidatesNum; i++) {
+            let item = await contract.methods.candidates(i).call()
+            candidates.push(item);
+        }
+    
+        setCandidates(candidates);
+        console.log(window.location.pathname);
+    };
+
+    const addNewDispute = async () => {
+        console.log("add");
+        await contract.methods.opendDispute(selectedRow.id, accounts[0]).send({ from: accounts[0] });
+        setOpen(false);
+    };
+
+    useEffect(() => {
+        if(contract) {
+            console.log(contract);
+            loadCandidates();
+        }
+    }, [contract]);
 
     const handleClickOpen = (rowIndex) => {
         setOpen(true);
-        setSelectedRow(rows[rowIndex]);
+        let selectedRow = candidates[rowIndex];
+        selectedRow.id = rowIndex;
+        setSelectedRow(selectedRow);
     };
 
     const handleClose = () => {
         setSelectedRow({});
         setOpen(false);
     };
-
-    const openDispute = () => {
-        console.log(selectedRow);
-        setOpen(false);
-    }
 
     return (
         <div className="rankingTableContainer">
@@ -82,19 +66,19 @@ export default function RannkingTable() {
                     <TableRow>
                         <TableCell align="center" className="tableCell">Rank</TableCell>
                         <TableCell align="center" className="tableCell">Student</TableCell>
+                        <TableCell align="center" className="tableCell">Faculty Number</TableCell>
                         <TableCell align="center" className="tableCell">Grade</TableCell>
-                        <TableCell align="center" className="tableCell">Wager</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
-                    {rows.map((row, index) => (
+                    {candidates ? candidates.map((candidate, index) => (
                         <TableRow key={index} hover onClick={() => handleClickOpen(index)} className="tableRow">
-                        <TableCell align="center"> {row.rank} </TableCell>
-                        <TableCell align="center"> {row.account} </TableCell>
-                        <TableCell align="center"> {row.grade} </TableCell>
-                        <TableCell align="center"> {row.wager} </TableCell>
+                        <TableCell align="center"> {index + 1} </TableCell>
+                        <TableCell align="center"> {candidate.Address} </TableCell>
+                        <TableCell align="center"> {candidate.FaculcyNumber} </TableCell>
+                        <TableCell align="center"> {candidate.Grade} </TableCell>
                         </TableRow>
-                    ))}
+                    )): null}
                     </TableBody>
                 </Table>
             </TableContainer>
@@ -108,10 +92,10 @@ export default function RannkingTable() {
                 <DialogContent>
                     <h4>This person got scholarship unrightfully?</h4>
                     <div>
-                        <p>Rank: {selectedRow.rank}</p>
-                        <p>Account: {selectedRow.account}</p>
-                        <p>Grade: {selectedRow.grade}</p>
-                        <p>Wager: {selectedRow.wager}</p>
+                        <p>Rank: {selectedRow.id + 1}</p>
+                        <p>Address: {selectedRow.Address}</p>
+                        <p>Faculty Number: {selectedRow.FaculcyNumber}</p>
+                        <p>Grade: {selectedRow.Grade}</p>
                     </div>
                     <h4>You can open a dispute for reassessment of their rank.</h4>
                 </DialogContent>
@@ -119,7 +103,7 @@ export default function RannkingTable() {
                 <Button onClick={handleClose} color="primary" variant="contained">
                     Cancel
                 </Button>
-                <Button onClick={openDispute} color="primary" variant="contained">
+                <Button onClick={addNewDispute} color="primary" variant="contained">
                     Open dispute
                 </Button>
                 </DialogActions>
