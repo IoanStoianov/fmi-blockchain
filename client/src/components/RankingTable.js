@@ -20,6 +20,8 @@ export default function RannkingTable({contract, accounts}) {
     const [selectedRow, setSelectedRow] = useState({});
     const [candidates, setCandidates] = useState(null);
 
+    const [classationDate, setClassationDate] = useState(null);
+
     const loadCandidates = async () => {
         const candidatesNum = await contract.methods.getCandidatesNum().call();
         let candidates = [];
@@ -32,8 +34,20 @@ export default function RannkingTable({contract, accounts}) {
         console.log(window.location.pathname);
     };
 
+    const loadClasationDate = async () => {
+    
+        var startDate = parseInt(await contract.methods.startDate().call());
+        
+        var clasationDate = parseInt(await contract.methods.clasationPeriod().call());
+
+        startDate += clasationDate*86400 // seconds in one day
+        var t = new Date(1970, 0, 1); 
+        t.setSeconds(startDate);
+        setClassationDate(t.toDateString()); 
+    
+    };
+
     const addNewDispute = async () => {
-        console.log("add");
         await contract.methods.opendDispute(selectedRow.id, accounts[0]).send({ from: accounts[0] });
         setOpen(false);
     };
@@ -42,6 +56,9 @@ export default function RannkingTable({contract, accounts}) {
         if(contract) {
             console.log(contract);
             loadCandidates();
+            if(classationDate == null){
+                loadClasationDate();
+            }
         }
     }, [contract]);
 
@@ -56,10 +73,15 @@ export default function RannkingTable({contract, accounts}) {
         setSelectedRow({});
         setOpen(false);
     };
+    
 
     return (
         <div className="rankingTableContainer">
             <h2>Current Ranking</h2>
+            {/* TODO Make button avaible when the candidate period is over*/}
+            <Button className="textPrimary">Ranking will be avaible in {classationDate}</Button>
+
+
             <TableContainer component={Paper} className="table">
                 <Table size="small" stickyHeader aria-label="a dense table">
                     <TableHead>

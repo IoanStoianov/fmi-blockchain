@@ -9,8 +9,10 @@ import Paper from '@material-ui/core/Paper';
 
 import './rankingTable.css';
 
-export default function RannkingTable({contract}) {
+export default function RannkingTable({contract, accounts}) {
     const [disputes, setDisputes] = useState(null);
+    const [canResolve, setCanResolve] = useState(false);
+    const [resolvePeriod, setResolvePeriod] = useState(null);
 
     const loadDisputes = async () => {
         const disputesNum = await contract.methods.getDisputeNum().call();
@@ -24,15 +26,44 @@ export default function RannkingTable({contract}) {
         console.log('disputes: ', disputes);
     }
 
+    const loadResolvePeriod = async () => {
+    
+        var startDate = parseInt(await contract.methods.startDate().call());
+        
+        var clasationDate = parseInt(await contract.methods.clasationPeriod().call());
+
+        var disputePeriod = parseInt(await contract.methods.disputePeriod().call());
+
+        startDate += clasationDate*86400 // seconds in one day
+        startDate += disputePeriod*86400 
+        var t = new Date(1970, 0, 1); 
+        t.setSeconds(startDate);
+        setResolvePeriod(t.toDateString()); 
+    
+    };
+
+    const loadKeeperAddress = async () => {
+        const keeper = await contract.methods.keeper().call();
+        if(keeper === accounts[0]){
+            setCanResolve(true);
+        }
+    }
+
     useEffect(() => {
         if(contract) {
             loadDisputes();
+            if(resolvePeriod == null){
+                loadResolvePeriod();
+                loadKeeperAddress();
+            }
         }
     }, [contract]);
 
     return (
         <div className="rankingTableContainer">
             <h2>Open Disputes</h2>
+            <div>Disputes can be resolved until {resolvePeriod}</div>
+
             <TableContainer component={Paper} className="table">
                 <Table size="small" stickyHeader aria-label="a dense table">
                     <TableHead>

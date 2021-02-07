@@ -46,7 +46,6 @@ export default function RequestPage({web3, deployedNetwork, contract, accounts})
                 address: deployedNetwork.address,
                 topics: [web3.utils.sha3("NewCandidate()")]
                 }, (error, result) => {
-                console.log("//////////")
                 if (!error) {
                     console.log(result);
                     loadCandidates();
