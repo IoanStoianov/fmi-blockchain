@@ -21,6 +21,7 @@ export default function RannkingTable({contract, accounts}) {
     const [candidates, setCandidates] = useState(null);
 
     const [classationDate, setClassationDate] = useState(null);
+    const [isClassationOpen, setIsClassationOpen] = useState(false);
 
     const loadCandidates = async () => {
         const candidatesNum = await contract.methods.getCandidatesNum().call();
@@ -44,7 +45,9 @@ export default function RannkingTable({contract, accounts}) {
         var t = new Date(1970, 0, 1); 
         t.setSeconds(startDate);
         setClassationDate(t.toDateString()); 
-    
+
+        const today = new Date();
+        setIsClassationOpen(today >= t);
     };
 
     const addNewDispute = async () => {
@@ -79,7 +82,7 @@ export default function RannkingTable({contract, accounts}) {
         <div className="rankingTableContainer">
             <h2>Current Ranking</h2>
             {/* TODO Make button avaible when the candidate period is over*/}
-            <Button className="textPrimary">Ranking will be avaible in {classationDate}</Button>
+            <Button variant="contained" disabled={!isClassationOpen} className={isClassationOpen ? 'classationButtonActive' : 'classationButtonInactive'} color={isClassationOpen ? 'primary' : ''}>Ranking will be avaible in {classationDate}</Button>
 
 
             <TableContainer component={Paper} className="table">

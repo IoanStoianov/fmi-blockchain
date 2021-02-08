@@ -6,6 +6,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
 
 import './rankingTable.css';
 
@@ -13,6 +18,9 @@ export default function RannkingTable({contract, accounts}) {
     const [disputes, setDisputes] = useState(null);
     const [canResolve, setCanResolve] = useState(false);
     const [resolvePeriod, setResolvePeriod] = useState(null);
+    const [open, setOpen] = useState(false);
+    const [selectedRow, setSelectedRow] = useState({});
+
 
     const loadDisputes = async () => {
         const disputesNum = await contract.methods.getDisputeNum().call();
@@ -44,6 +52,7 @@ export default function RannkingTable({contract, accounts}) {
 
     const loadKeeperAddress = async () => {
         const keeper = await contract.methods.keeper().call();
+        console.log(keeper);
         if(keeper === accounts[0]){
             setCanResolve(true);
         }
@@ -59,10 +68,29 @@ export default function RannkingTable({contract, accounts}) {
         }
     }, [contract]);
 
+    const handleClickOpen = (rowIndex) => {
+        setOpen(true);
+        let selectedRow = disputes[rowIndex];
+        selectedRow.id = rowIndex;
+        setSelectedRow(selectedRow);
+    };
+
+    const resolveDisputeNo = () => {
+        // TODO: resolve dispute with NO
+        setSelectedRow({});
+        setOpen(false);
+    };
+
+    const resolveDisputeYes = () => {
+        // TODO: resolve dispute with YES
+        setSelectedRow({});
+        setOpen(false);
+    };
+
     return (
         <div className="rankingTableContainer">
             <h2>Open Disputes</h2>
-            <div>Disputes can be resolved until {resolvePeriod}</div>
+            <div className="message">Disputes can be resolved until {resolvePeriod}</div>
 
             <TableContainer component={Paper} className="table">
                 <Table size="small" stickyHeader aria-label="a dense table">
@@ -75,7 +103,7 @@ export default function RannkingTable({contract, accounts}) {
                     </TableHead>
                     <TableBody>
                     {disputes ? disputes.map((dispute, index) => (
-                        <TableRow key={index} hover>
+                        <TableRow key={index} hover onClick={() => handleClickOpen(index)} className={canResolve ? 'tableRow' : 'disableClick'}>
                             <TableCell align="center"> {index + 1} </TableCell>
                             <TableCell align="center"> {dispute.OpenedBy} </TableCell>
                             <TableCell align="center"> {dispute.Open ? 'Yes' : 'No'} </TableCell>
@@ -84,6 +112,28 @@ export default function RannkingTable({contract, accounts}) {
                     </TableBody>
                 </Table>
             </TableContainer>
+            <Dialog
+                open={open}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{"Close dispute."}</DialogTitle>
+                <DialogContent>
+                    <h4>Is this dispute correct?</h4>
+                    <div>
+                        <p>Rank: {selectedRow.id + 1}</p>
+                        <p>Opened By: {selectedRow.OpenedBy}</p>
+                    </div>
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={resolveDisputeNo} color="secondary" variant="contained">
+                    No
+                </Button>
+                <Button onClick={resolveDisputeYes} color="primary" variant="contained">
+                    Yes
+                </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

@@ -23,3 +23,21 @@
 .dialogText {
    color: black !important; 
 }
+
+.classationButtonActive {
+    color: white !important;
+    margin-bottom: 2em !important;
+}
+
+.classationButtonInactive {
+    color: black !important;
+    margin-bottom: 2em !important;
+}
+
+.disableClick {
+    pointer-events: none !important;
+}
+
+.message {
+    margin-bottom: 2em;
+}
