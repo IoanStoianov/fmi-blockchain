@@ -21,13 +21,14 @@ export default function RannkingTable({contract, accounts}) {
     const [open, setOpen] = useState(false);
     const [selectedRow, setSelectedRow] = useState({});
 
-
     const loadDisputes = async () => {
         const disputesNum = await contract.methods.getDisputeNum().call();
         let disputes = [];
         for (let i = 0; i < disputesNum; i++) {
             let item = await contract.methods.disputes(i).call()
-            disputes.push(item);
+            let candidate = await contract.methods.candidates(item.CandidateId).call()
+            
+            disputes.push({...item, ...candidate});
         }
 
         setDisputes(disputes);
@@ -76,13 +77,13 @@ export default function RannkingTable({contract, accounts}) {
     };
 
     const resolveDisputeNo = () => {
-        // TODO: resolve dispute with NO
+        contract.methods.resolveDisput(selectedRow.id,true).send({ from: accounts[0]});
         setSelectedRow({});
         setOpen(false);
     };
 
     const resolveDisputeYes = () => {
-        // TODO: resolve dispute with YES
+        contract.methods.resolveDisput(selectedRow.id,true).send({ from: accounts[0]});
         setSelectedRow({});
         setOpen(false);
     };
@@ -96,7 +97,11 @@ export default function RannkingTable({contract, accounts}) {
                 <Table size="small" stickyHeader aria-label="a dense table">
                     <TableHead>
                     <TableRow>
+
                         <TableCell align="center" className="tableCell">Dispute Id</TableCell>
+                        <TableCell align="center" className="tableCell">Candidate</TableCell>
+                        <TableCell align="center" className="tableCell">Faculty Number</TableCell>
+                        <TableCell align="center" className="tableCell">Grade</TableCell>
                         <TableCell align="center" className="tableCell">Opened By</TableCell>
                         <TableCell align="center" className="tableCell">Open</TableCell>
                     </TableRow>
@@ -105,6 +110,9 @@ export default function RannkingTable({contract, accounts}) {
                     {disputes ? disputes.map((dispute, index) => (
                         <TableRow key={index} hover onClick={() => handleClickOpen(index)} className={canResolve ? 'tableRow' : 'disableClick'}>
                             <TableCell align="center"> {index + 1} </TableCell>
+                            <TableCell align="center"> {dispute.Name} </TableCell>
+                            <TableCell align="center"> {dispute.FacultyNumber} </TableCell>
+                            <TableCell align="center"> {dispute.Grade} </TableCell>
                             <TableCell align="center"> {dispute.OpenedBy} </TableCell>
                             <TableCell align="center"> {dispute.Open ? 'Yes' : 'No'} </TableCell>
                         </TableRow>

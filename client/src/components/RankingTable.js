@@ -77,12 +77,15 @@ export default function RannkingTable({contract, accounts}) {
         setOpen(false);
     };
     
+    const createClassation = () => {
+        contract.methods.createClasation().send({ from: accounts[0] })
+    }
 
     return (
         <div className="rankingTableContainer">
             <h2>Current Ranking</h2>
             {/* TODO Make button avaible when the candidate period is over*/}
-            <Button variant="contained" disabled={!isClassationOpen} className={isClassationOpen ? 'classationButtonActive' : 'classationButtonInactive'} color={isClassationOpen ? 'primary' : ''}>Ranking will be avaible in {classationDate}</Button>
+            <Button onClick={createClassation} variant="contained" disabled={!isClassationOpen} className={isClassationOpen ? 'classationButtonActive' : 'classationButtonInactive'} color={isClassationOpen ? 'primary' : ''}>Ranking will be avaible in {classationDate}</Button>
 
 
             <TableContainer component={Paper} className="table">

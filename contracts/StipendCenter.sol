@@ -45,17 +45,15 @@ contract StipendCenter {
         _;
     }
     
-    
     function createClasation() external inDesputeState {
         DataTypes.Candidate[] memory x = clasificator.createClasation(candidates);
 
         for(uint i = 0; i < candidates.length; i++){
-            candidates[i] = x[i];
+            candidates[i] = x[candidates.length - 1 - i];
         }
-        
     }
     
-    function receiveStipends(uint nStipends) external payable inFinalState{ //TODO edit return stake
+    function receiveStipends(uint nStipends) external payable inFinalState{
         uint singleTransfer = msg.value / candidates.length;
         uint i = 0;
         for(uint j = 0; j < nStipends && i <  candidates.length; i++){
@@ -75,10 +73,10 @@ contract StipendCenter {
 
     event NewCandidate();
 
-    function addNewCandidate(string memory name, string memory faculcyNumber, uint grade, address payable studentAddress) external payable inClastaionState{
+    function addNewCandidate(string memory name, string memory facultyNumber, uint grade, address payable studentAddress) external payable inClastaionState{
         require(studentAddress == msg.sender, "StudentAddress and sender must be the same address");
         require(msg.value == stake, "The send value is different than the required!");
-        DataTypes.Candidate memory newCandidate = DataTypes.Candidate(name, faculcyNumber, grade, studentAddress, true);
+        DataTypes.Candidate memory newCandidate = DataTypes.Candidate(name, facultyNumber, grade, studentAddress, true);
         candidates.push(newCandidate);
         emit NewCandidate();
     }
