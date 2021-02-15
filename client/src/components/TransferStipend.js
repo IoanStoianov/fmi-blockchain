@@ -1,27 +1,46 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import './rankingTable.css';
-
- 
+import './requestPage.css';
 
 export default function TransferStipend({contract, accounts}) {
 
+    const [stipendNum, setStipendNum] = useState('');
+    const [stipendValue, setStipendValue] = useState('');
+
     const transfer = async () => {
-        var num = document.getElementById("stipend-num").value;
-        var val = document.getElementById("stipend-value").value;
-        val *= 1000000000000000000
+        var num = Number(stipendNum);
+        var val = Number(stipendValue);
+        val *= 1000000000000000000;
         await contract.methods.receiveStipends(num).send({ from: accounts[0], value : val});
-        
+        setStipendNum('');
+        setStipendValue('');
     };
 
-    return(<div>
-        <label>Stipend Num</label>
-        <input type="number" id="stipend-num" />
-        <div>   </div>
-        <label>Stipend Value</label>
-        <input type="number" id="stipend-value" />
-        <Button onClick={transfer}>Transfer</Button>
-    </div>)
+    return(
+        <section className="container">
+        <form className="form">
+            <h2>Make transfer</h2>
+            <TextField
+                value={stipendNum}
+                id="stipendNum"
+                label="Stipend Number"
+                variant="outlined"
+                className="inputField"
+                type="number"
+                onChange={(e) => setStipendNum(e.target.value)}
+            />
+            <TextField
+                value={stipendValue}
+                id="stipendValue"
+                label="Stipend Value"
+                variant="outlined"
+                className="inputField"
+                onChange={(e) => setStipendValue(e.target.value)}
+            />
+            <Button variant="contained" color="primary" className="submitButton" onClick={transfer}>Transfer</Button>
+        </form>
+      </section>
+    )
 }

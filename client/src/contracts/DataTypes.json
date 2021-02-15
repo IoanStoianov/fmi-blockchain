@@ -1,18 +1,18 @@
 {
   "contractName": "DataTypes",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":\"DataTypes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x294b5103e2f0cc5aa71fa6fa35cb3ba19d72c72f23ccbb231932266d5df7ceb0\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c95f5b1ca54dbeb1cbe9806aab4e5edfc705385addeae35ea6e8e3de5ce43d61\",\"dweb:/ipfs/QmfFwmUKiP5FV2g6cPgSPtUpy7ngniyqHejQ9qjeTwaAn7\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fbf373b815bf893ec4cb61e130896a0dbc3c6dfa9e57312aa19b99144a84449764736f6c63430007040033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fbf373b815bf893ec4cb61e130896a0dbc3c6dfa9e57312aa19b99144a84449764736f6c63430007040033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol\":\"DataTypes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x72e2c28de4e7c979a92de89ed8fb58499fcf0f6755cfe9a762df89792601bef3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://402fc644a3b4df8764406e1455aefdd166f5cb3b3caf90d020b5307703a3f99c\",\"dweb:/ipfs/QmQDTMtTApAuKaRwf1YbrM2q11heTj3mZrpTbPyMTweRPA\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ad21979e5f9a91dfb1f5f1c584b2698479054691b0e71904f7e56f6a74da9f4164736f6c63430007040033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ad21979e5f9a91dfb1f5f1c584b2698479054691b0e71904f7e56f6a74da9f4164736f6c63430007040033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "69:280:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "69:280:0:-:0;;;;;;;;",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity >=0.7.4 <0.9.0;\n\nlibrary DataTypes {\n    struct Candidate {\n        string Name;\n        string FacultyNumber;\n        uint Grade;\n        address payable Address;\n        bool Valid;\n    }\n\n    struct Dispute{\n        uint CandidateId;\n        address payable OpenedBy;\n        bool Open;\n    }\n}",
-  "sourcePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
+  "sourceMap": "72:294:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "72:294:0:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.7.4 <0.9.0;\r\n\r\nlibrary DataTypes {\r\n    struct Candidate {\r\n        string Name;\r\n        string FacultyNumber;\r\n        uint Grade;\r\n        address payable Address;\r\n        bool Valid;\r\n    }\r\n\r\n    struct Dispute{\r\n        uint CandidateId;\r\n        address payable OpenedBy;\r\n        bool Open;\r\n    }\r\n}",
+  "sourcePath": "C:\\BlockChain\\fmi-blockchain\\contracts\\DataTypes.sol",
   "ast": {
-    "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
+    "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol",
     "exportedSymbols": {
       "DataTypes": [
         20
@@ -34,7 +34,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "36:31:0"
+        "src": "37:31:0"
       },
       {
         "abstract": false,
@@ -60,7 +60,7 @@
                 "name": "Name",
                 "nodeType": "VariableDeclaration",
                 "scope": 12,
-                "src": "120:11:0",
+                "src": "125:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -71,7 +71,7 @@
                   "id": 2,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "120:6:0",
+                  "src": "125:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -86,7 +86,7 @@
                 "name": "FacultyNumber",
                 "nodeType": "VariableDeclaration",
                 "scope": 12,
-                "src": "141:20:0",
+                "src": "147:20:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -97,7 +97,7 @@
                   "id": 4,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "141:6:0",
+                  "src": "147:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -112,7 +112,7 @@
                 "name": "Grade",
                 "nodeType": "VariableDeclaration",
                 "scope": 12,
-                "src": "171:10:0",
+                "src": "178:10:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -123,7 +123,7 @@
                   "id": 6,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "171:4:0",
+                  "src": "178:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -138,7 +138,7 @@
                 "name": "Address",
                 "nodeType": "VariableDeclaration",
                 "scope": 12,
-                "src": "191:23:0",
+                "src": "199:23:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -149,7 +149,7 @@
                   "id": 8,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "191:15:0",
+                  "src": "199:15:0",
                   "stateMutability": "payable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address_payable",
@@ -165,7 +165,7 @@
                 "name": "Valid",
                 "nodeType": "VariableDeclaration",
                 "scope": 12,
-                "src": "224:10:0",
+                "src": "233:10:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -176,7 +176,7 @@
                   "id": 10,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "224:4:0",
+                  "src": "233:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -188,7 +188,7 @@
             "name": "Candidate",
             "nodeType": "StructDefinition",
             "scope": 20,
-            "src": "93:148:0",
+            "src": "97:154:0",
             "visibility": "public"
           },
           {
@@ -202,7 +202,7 @@
                 "name": "CandidateId",
                 "nodeType": "VariableDeclaration",
                 "scope": 19,
-                "src": "271:16:0",
+                "src": "284:16:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -213,7 +213,7 @@
                   "id": 13,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "271:4:0",
+                  "src": "284:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -228,7 +228,7 @@
                 "name": "OpenedBy",
                 "nodeType": "VariableDeclaration",
                 "scope": 19,
-                "src": "297:24:0",
+                "src": "311:24:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -239,7 +239,7 @@
                   "id": 15,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "297:15:0",
+                  "src": "311:15:0",
                   "stateMutability": "payable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address_payable",
@@ -255,7 +255,7 @@
                 "name": "Open",
                 "nodeType": "VariableDeclaration",
                 "scope": 19,
-                "src": "331:9:0",
+                "src": "346:9:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -266,7 +266,7 @@
                   "id": 17,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "331:4:0",
+                  "src": "346:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -278,19 +278,19 @@
             "name": "Dispute",
             "nodeType": "StructDefinition",
             "scope": 20,
-            "src": "247:100:0",
+            "src": "259:104:0",
             "visibility": "public"
           }
         ],
         "scope": 21,
-        "src": "69:280:0"
+        "src": "72:294:0"
       }
     ],
-    "src": "36:313:0"
+    "src": "37:329:0"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
+      "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol",
       "exportedSymbols": {
         "DataTypes": [
           20
@@ -313,7 +313,7 @@
         },
         "id": 1,
         "name": "PragmaDirective",
-        "src": "36:31:0"
+        "src": "37:31:0"
       },
       {
         "attributes": {
@@ -360,12 +360,12 @@
                     },
                     "id": 2,
                     "name": "ElementaryTypeName",
-                    "src": "120:6:0"
+                    "src": "125:6:0"
                   }
                 ],
                 "id": 3,
                 "name": "VariableDeclaration",
-                "src": "120:11:0"
+                "src": "125:11:0"
               },
               {
                 "attributes": {
@@ -386,12 +386,12 @@
                     },
                     "id": 4,
                     "name": "ElementaryTypeName",
-                    "src": "141:6:0"
+                    "src": "147:6:0"
                   }
                 ],
                 "id": 5,
                 "name": "VariableDeclaration",
-                "src": "141:20:0"
+                "src": "147:20:0"
               },
               {
                 "attributes": {
@@ -412,12 +412,12 @@
                     },
                     "id": 6,
                     "name": "ElementaryTypeName",
-                    "src": "171:4:0"
+                    "src": "178:4:0"
                   }
                 ],
                 "id": 7,
                 "name": "VariableDeclaration",
-                "src": "171:10:0"
+                "src": "178:10:0"
               },
               {
                 "attributes": {
@@ -439,12 +439,12 @@
                     },
                     "id": 8,
                     "name": "ElementaryTypeName",
-                    "src": "191:15:0"
+                    "src": "199:15:0"
                   }
                 ],
                 "id": 9,
                 "name": "VariableDeclaration",
-                "src": "191:23:0"
+                "src": "199:23:0"
               },
               {
                 "attributes": {
@@ -465,17 +465,17 @@
                     },
                     "id": 10,
                     "name": "ElementaryTypeName",
-                    "src": "224:4:0"
+                    "src": "233:4:0"
                   }
                 ],
                 "id": 11,
                 "name": "VariableDeclaration",
-                "src": "224:10:0"
+                "src": "233:10:0"
               }
             ],
             "id": 12,
             "name": "StructDefinition",
-            "src": "93:148:0"
+            "src": "97:154:0"
           },
           {
             "attributes": {
@@ -504,12 +504,12 @@
                     },
                     "id": 13,
                     "name": "ElementaryTypeName",
-                    "src": "271:4:0"
+                    "src": "284:4:0"
                   }
                 ],
                 "id": 14,
                 "name": "VariableDeclaration",
-                "src": "271:16:0"
+                "src": "284:16:0"
               },
               {
                 "attributes": {
@@ -531,12 +531,12 @@
                     },
                     "id": 15,
                     "name": "ElementaryTypeName",
-                    "src": "297:15:0"
+                    "src": "311:15:0"
                   }
                 ],
                 "id": 16,
                 "name": "VariableDeclaration",
-                "src": "297:24:0"
+                "src": "311:24:0"
               },
               {
                 "attributes": {
@@ -557,27 +557,27 @@
                     },
                     "id": 17,
                     "name": "ElementaryTypeName",
-                    "src": "331:4:0"
+                    "src": "346:4:0"
                   }
                 ],
                 "id": 18,
                 "name": "VariableDeclaration",
-                "src": "331:9:0"
+                "src": "346:9:0"
               }
             ],
             "id": 19,
             "name": "StructDefinition",
-            "src": "247:100:0"
+            "src": "259:104:0"
           }
         ],
         "id": 20,
         "name": "ContractDefinition",
-        "src": "69:280:0"
+        "src": "72:294:0"
       }
     ],
     "id": 21,
     "name": "SourceUnit",
-    "src": "36:313:0"
+    "src": "37:329:0"
   },
   "compiler": {
     "name": "solc",
@@ -585,7 +585,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-09T18:01:16.652Z",
+  "updatedAt": "2021-02-15T07:46:09.920Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
