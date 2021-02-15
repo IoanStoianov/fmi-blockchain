@@ -12,6 +12,7 @@ export default function NavBar() {
             <Link to="/" component={Button} className={window.location.pathname === '/' ? 'button' : ''}>Request Scholarship</Link>
             <Link to="/ranking" component={Button} className={window.location.pathname === '/ranking' ? 'button' : ''}>Ranking</Link>
             <Link to="/disputes" component={Button} className={window.location.pathname === '/disputes' ? 'button' : ''}>Disputes</Link>
+            <Link to="/transfer" component={Button} className={window.location.pathname === '/transfer' ? 'button' : ''}>Transfer</Link>
         </Toolbar>
       </AppBar>
     );

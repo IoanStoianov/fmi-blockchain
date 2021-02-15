@@ -12,6 +12,7 @@ import RankingTable from './components/RankingTable.js';
 import DisputesTable from './components/DisputesTable.js';
 
 import "./App.css";
+import TransferStipend from "./components/TransferStipend";
 
 class App extends Component {
   constructor(props) {
@@ -76,6 +77,16 @@ class App extends Component {
             <Route path="/disputes" 
               component={ () => 
                 <DisputesTable 
+                  web3={this.state.web3}
+                  deployedNetwork={this.state.deployedNetwork} 
+                  contract={this.state.contract} 
+                  accounts={this.state.accounts}
+                />
+              } 
+            />
+            <Route path="/transfer"
+              component={ () => 
+                <TransferStipend 
                   web3={this.state.web3}
                   deployedNetwork={this.state.deployedNetwork} 
                   contract={this.state.contract} 

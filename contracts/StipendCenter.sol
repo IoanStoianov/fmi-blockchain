@@ -31,17 +31,17 @@ contract StipendCenter {
     }
     
     modifier inClastaionState() {
-        require(block.timestamp < startDate + clasationPeriod * 1 days, "Clasation period is over!");
+        // require(block.timestamp < startDate + clasationPeriod * 1 days, "Clasation period is over!");
         _;
     }
     
     modifier inDesputeState(){
-        require(block.timestamp < startDate + clasationPeriod * 1 days + disputePeriod * 1 days, "Dispute period is over!");
+        // require(block.timestamp < startDate + clasationPeriod * 1 days + disputePeriod * 1 days, "Dispute period is over!");
         _;
     }
     
     modifier inFinalState(){
-        require(block.timestamp >= startDate + clasationPeriod  * 1 days+ disputePeriod * 1 days, "Dispute period is over!");
+        // require(block.timestamp >= startDate + clasationPeriod  * 1 days+ disputePeriod * 1 days, "Dispute period is over!");
         _;
     }
     
