@@ -30,7 +30,7 @@ export default function RannkingTable({contract, accounts}) {
             let item = await contract.methods.candidates(i).call()
             candidates.push(item);
         }
-    
+        console.log(candidates)
         setCandidates(candidates);
         console.log(window.location.pathname);
     };
@@ -96,6 +96,7 @@ export default function RannkingTable({contract, accounts}) {
                         <TableCell align="center" className="tableCell">Student</TableCell>
                         <TableCell align="center" className="tableCell">Faculty Number</TableCell>
                         <TableCell align="center" className="tableCell">Grade</TableCell>
+                        <TableCell align="center" className="tableCell">Valid</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
@@ -103,8 +104,9 @@ export default function RannkingTable({contract, accounts}) {
                         <TableRow key={index} hover onClick={() => handleClickOpen(index)} className="tableRow">
                         <TableCell align="center"> {index + 1} </TableCell>
                         <TableCell align="center"> {candidate.Address} </TableCell>
-                        <TableCell align="center"> {candidate.FaculcyNumber} </TableCell>
+                        <TableCell align="center"> {candidate.FacultyNumber} </TableCell>
                         <TableCell align="center"> {candidate.Grade} </TableCell>
+                        <TableCell align="center"> {candidate.Valid? "Yes": "No"} </TableCell>
                         </TableRow>
                     )): null}
                     </TableBody>

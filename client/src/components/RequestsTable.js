@@ -29,7 +29,7 @@ export default function RequestsTable({candidates}) {
                         <TableRow key={index} hover>
                             <TableCell align="center"> {candidate.Name} </TableCell>
                             <TableCell align="center"> {candidate.Address} </TableCell>
-                            <TableCell align="center"> {candidate.FaculcyNumber} </TableCell>
+                            <TableCell align="center"> {candidate.FacultyNumber} </TableCell>
                             <TableCell align="center"> {candidate.Grade} </TableCell>
                         </TableRow>
                     )) : null}

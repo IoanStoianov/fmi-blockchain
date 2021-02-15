@@ -75,7 +75,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FacultyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"c\",\"type\":\"tuple[]\"}],\"name\":\"createClasation\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FacultyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"x\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/BlockChain/fmi-blockchain/contracts/IClasify.sol\":\"IClasify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x72e2c28de4e7c979a92de89ed8fb58499fcf0f6755cfe9a762df89792601bef3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://402fc644a3b4df8764406e1455aefdd166f5cb3b3caf90d020b5307703a3f99c\",\"dweb:/ipfs/QmQDTMtTApAuKaRwf1YbrM2q11heTj3mZrpTbPyMTweRPA\"]},\"/C/BlockChain/fmi-blockchain/contracts/IClasify.sol\":{\"keccak256\":\"0xf1cbfdb8b3de0d6bd2581ca3dab205b3584fb3b54b62251d5479524a94454581\",\"urls\":[\"bzz-raw://c70dd57f53386b9fe8c482ea86ad29733b4c0b68d9387b467d7a6ce10054e1d4\",\"dweb:/ipfs/QmWtnR1UT21LVfAvBiM3HYF6sVjQifriaGBiMkaZbixVui\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FacultyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"c\",\"type\":\"tuple[]\"}],\"name\":\"createClasation\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"Name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"FacultyNumber\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"Grade\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"Address\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Valid\",\"type\":\"bool\"}],\"internalType\":\"struct DataTypes.Candidate[]\",\"name\":\"x\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol\":\"IClasify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol\":{\"keccak256\":\"0x294b5103e2f0cc5aa71fa6fa35cb3ba19d72c72f23ccbb231932266d5df7ceb0\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c95f5b1ca54dbeb1cbe9806aab4e5edfc705385addeae35ea6e8e3de5ce43d61\",\"dweb:/ipfs/QmfFwmUKiP5FV2g6cPgSPtUpy7ngniyqHejQ9qjeTwaAn7\"]},\"/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol\":{\"keccak256\":\"0xf4c3d708af2e6ce65a55d1c19caeb8cc7e02fa80d7ec4dea42ca11a9a4bca237\",\"urls\":[\"bzz-raw://9799bfe2a249e56002ab8c5f0faf6e81c4f11eda73d2e7c93bacf250d7b329b0\",\"dweb:/ipfs/QmcqjjjqHZrBqEkW2Zrznr2KuJNdnvNpu8kXJs7K8vzoKP\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -83,10 +83,10 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity >=0.7.4 <0.9.0;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport \"./DataTypes.sol\";\r\n\r\ninterface IClasify{\r\n    function createClasation(DataTypes.Candidate[] memory c) external returns(DataTypes.Candidate[] memory x);\r\n}",
-  "sourcePath": "C:\\BlockChain\\fmi-blockchain\\contracts\\IClasify.sol",
+  "source": "pragma solidity >=0.7.4 <0.9.0;\npragma experimental ABIEncoderV2;\n\nimport \"./DataTypes.sol\";\n\ninterface IClasify{\n    function createClasation(DataTypes.Candidate[] memory c) external returns(DataTypes.Candidate[] memory x);\n}",
+  "sourcePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
   "ast": {
-    "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/IClasify.sol",
+    "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
     "exportedSymbols": {
       "DataTypes": [
         20
@@ -119,16 +119,16 @@
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:33:1"
+        "src": "32:33:1"
       },
       {
-        "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol",
+        "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
         "file": "./DataTypes.sol",
         "id": 24,
         "nodeType": "ImportDirective",
         "scope": 35,
         "sourceUnit": 21,
-        "src": "70:25:1",
+        "src": "67:25:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -164,7 +164,7 @@
                   "name": "c",
                   "nodeType": "VariableDeclaration",
                   "scope": 33,
-                  "src": "149:30:1",
+                  "src": "143:30:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -177,7 +177,7 @@
                       "name": "DataTypes.Candidate",
                       "nodeType": "UserDefinedTypeName",
                       "referencedDeclaration": 12,
-                      "src": "149:19:1",
+                      "src": "143:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Candidate_$12_storage_ptr",
                         "typeString": "struct DataTypes.Candidate"
@@ -185,7 +185,7 @@
                     },
                     "id": 26,
                     "nodeType": "ArrayTypeName",
-                    "src": "149:21:1",
+                    "src": "143:21:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_struct$_Candidate_$12_storage_$dyn_storage_ptr",
                       "typeString": "struct DataTypes.Candidate[]"
@@ -194,7 +194,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "148:32:1"
+              "src": "142:32:1"
             },
             "returnParameters": {
               "id": 32,
@@ -207,7 +207,7 @@
                   "name": "x",
                   "nodeType": "VariableDeclaration",
                   "scope": 33,
-                  "src": "198:30:1",
+                  "src": "192:30:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -220,7 +220,7 @@
                       "name": "DataTypes.Candidate",
                       "nodeType": "UserDefinedTypeName",
                       "referencedDeclaration": 12,
-                      "src": "198:19:1",
+                      "src": "192:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Candidate_$12_storage_ptr",
                         "typeString": "struct DataTypes.Candidate"
@@ -228,7 +228,7 @@
                     },
                     "id": 30,
                     "nodeType": "ArrayTypeName",
-                    "src": "198:21:1",
+                    "src": "192:21:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_struct$_Candidate_$12_storage_$dyn_storage_ptr",
                       "typeString": "struct DataTypes.Candidate[]"
@@ -237,24 +237,24 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "197:32:1"
+              "src": "191:32:1"
             },
             "scope": 34,
-            "src": "124:106:1",
+            "src": "118:106:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
         "scope": 35,
-        "src": "99:134:1"
+        "src": "94:132:1"
       }
     ],
-    "src": "0:233:1"
+    "src": "0:226:1"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/IClasify.sol",
+      "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/IClasify.sol",
       "exportedSymbols": {
         "DataTypes": [
           20
@@ -290,12 +290,12 @@
         },
         "id": 23,
         "name": "PragmaDirective",
-        "src": "33:33:1"
+        "src": "32:33:1"
       },
       {
         "attributes": {
           "SourceUnit": 21,
-          "absolutePath": "/C/BlockChain/fmi-blockchain/contracts/DataTypes.sol",
+          "absolutePath": "/home/ioan681/Desktop/Projects/fmi-blockchain/contracts/DataTypes.sol",
           "file": "./DataTypes.sol",
           "scope": 35,
           "symbolAliases": [
@@ -305,7 +305,7 @@
         },
         "id": 24,
         "name": "ImportDirective",
-        "src": "70:25:1"
+        "src": "67:25:1"
       },
       {
         "attributes": {
@@ -368,22 +368,22 @@
                             },
                             "id": 25,
                             "name": "UserDefinedTypeName",
-                            "src": "149:19:1"
+                            "src": "143:19:1"
                           }
                         ],
                         "id": 26,
                         "name": "ArrayTypeName",
-                        "src": "149:21:1"
+                        "src": "143:21:1"
                       }
                     ],
                     "id": 27,
                     "name": "VariableDeclaration",
-                    "src": "149:30:1"
+                    "src": "143:30:1"
                   }
                 ],
                 "id": 28,
                 "name": "ParameterList",
-                "src": "148:32:1"
+                "src": "142:32:1"
               },
               {
                 "children": [
@@ -412,37 +412,37 @@
                             },
                             "id": 29,
                             "name": "UserDefinedTypeName",
-                            "src": "198:19:1"
+                            "src": "192:19:1"
                           }
                         ],
                         "id": 30,
                         "name": "ArrayTypeName",
-                        "src": "198:21:1"
+                        "src": "192:21:1"
                       }
                     ],
                     "id": 31,
                     "name": "VariableDeclaration",
-                    "src": "198:30:1"
+                    "src": "192:30:1"
                   }
                 ],
                 "id": 32,
                 "name": "ParameterList",
-                "src": "197:32:1"
+                "src": "191:32:1"
               }
             ],
             "id": 33,
             "name": "FunctionDefinition",
-            "src": "124:106:1"
+            "src": "118:106:1"
           }
         ],
         "id": 34,
         "name": "ContractDefinition",
-        "src": "99:134:1"
+        "src": "94:132:1"
       }
     ],
     "id": 35,
     "name": "SourceUnit",
-    "src": "0:233:1"
+    "src": "0:226:1"
   },
   "compiler": {
     "name": "solc",
@@ -450,7 +450,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-15T07:46:09.925Z",
+  "updatedAt": "2021-02-15T08:04:48.349Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

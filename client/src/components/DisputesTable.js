@@ -77,7 +77,7 @@ export default function RannkingTable({contract, accounts}) {
     };
 
     const resolveDisputeNo = () => {
-        contract.methods.resolveDisput(selectedRow.id,true).send({ from: accounts[0]});
+        contract.methods.resolveDisput(selectedRow.id,false).send({ from: accounts[0]});
         setSelectedRow({});
         setOpen(false);
     };
